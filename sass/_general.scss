@@ -1,0 +1,486 @@
+/************Begin hero fashion**************/
+
+.hero-fashion {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/background.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 30px 0 0 0;
+    overflow: hidden;
+    .sidebar {
+        width: 155px;
+        height: 100vh;
+        background: rgba(29, 31, 38, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        .search-icon {
+            display: block;
+            margin: 120px auto 0;
+        }
+        .social-links {
+            @include flexbox;
+            @include flex-direction(column);
+            @include align-items(center);
+            @include justify-content(center);
+            height: 100%;
+            svg {
+                height: 15px;
+                margin-bottom: 30px;
+                cursor: pointer;
+                path {
+                    fill: $color_white;
+                }
+                &:hover {
+                    path {
+                        fill: $color_secondary
+                    }
+                }
+            }
+        }
+        .info-icon {
+            width: 20px;
+            position: absolute;
+            left: 50%;
+            bottom: 30px;
+            @include prefixer(transform, translateX(-50%), moz ms o webkit);
+            //transform: translateX(-50%);
+            &:hover {
+                path {
+                    fill: $color_secondary
+                }
+            }
+        }
+    }
+    .pub-container {
+        position: absolute;
+        left: 14%;
+        top: 57%;
+        @include prefixer(transform, translateY(-50%), moz ms o webkit);
+        max-width: 600px;
+        overflow: hidden;
+    }
+    .slider {
+        @include inline-flex;
+        @include prefixer( transition, all .5s ease-in, webkit o ms webkit);
+        .pub {
+            width: 600px;
+            overflow: hidden;
+            h1 {
+                color: $color_white;
+                font-size: 60px;
+                font-weight: 100;
+                margin: 24px 0 15px 0;
+            }
+            p {
+                font-size: 20px;
+                color: $color_white;
+            }
+        }
+    }
+    .controller {
+        width: 1px;
+        height: 320px;
+        display: block;
+        background: #c0c0c0;
+        position: absolute;
+        top: 55%;
+        right: 50px;
+        @include prefixer(transform, translateY(-50%), moz ms o webkit);
+        div[id*="line"] {
+            height: 80px;
+            width: 10px;
+            cursor: pointer;
+            @include prefixer(transform, translateX(-50%), moz ms o webkit);
+        }
+        #active {
+            width: 5px;
+            height: 80px;
+            top: 0;
+            @include bRaduis(10px);
+            background: $color_white;
+            position: absolute;
+            @include prefixer(transform, translateX(-50%), moz ms o webkit);
+            @include transition(0.5s);
+        }
+    }
+    .right-col {
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+        position: absolute;
+        right: 64px;
+        top: 50%;
+        @include prefixer(transform, translateY(-50%), moz ms o webkit);
+        p {
+            color: $color_white;
+            font-size: 16px;
+        }
+    }
+    svg.play,
+    svg.pause {
+        height: 65px;
+        fill: $color_white;
+    }
+    .bubbles {
+        width: 100%;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(space-around);
+        position: absolute;
+        top: -70px;
+        img {
+            width: 50px;
+            @include prefixer(animation, bubbles 7s linear infinite, webkit moz o ms);
+            &:nth-child(1) {
+                animation-delay: 2s;
+            }
+            &:nth-child(2) {
+                animation-delay: 1s;
+            }
+            &:nth-child(3) {
+                animation-delay: 3s;
+            }
+            &:nth-child(4) {
+                animation-delay: 4.5s;
+            }
+            &:nth-child(5) {
+                animation-delay: 3s;
+            }
+            &:nth-child(6) {
+                animation-delay: 6s;
+            }
+            &:nth-child(7) {
+                animation-delay: 7s;
+            }
+        }
+    }
+    @include keyframes (bubbles) {
+        0% {
+            transform: translateY(0vh);
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(110vh);
+            opacity: 1;
+        }
+    }
+}
+
+.title-style {
+    @include title;
+}
+
+
+/************End hero fashion**************/
+
+
+/************Begin Gallery videos**************/
+
+.gallery-video {
+    position: relative;
+    .feature-img {
+        background: #efefef;
+        margin: 5px 0;
+        @include bRaduis(6px);
+        .small-img {
+            padding-left: 0;
+            .play-btn {
+                width: 35px;
+            }
+        }
+        .play-btn {
+            width: 60px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @include prefixer(transform, translate(-50%, -50%), moz ms o webkit);
+            cursor: pointer;
+        }
+        p {
+            color: #707070;
+            line-height: 22px;
+            font-size: 15px;
+            height: 100px;
+            @include flexbox;
+            @include align-items(center);
+        }
+        img {
+            @include bRaduis(6px)
+        }
+    }
+    .video-player {
+        width: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include prefixer(transform, translate(-50%, -50%), moz ms o webkit);
+        display: none;
+        cursor: pointer;
+        @include transition( .5s);
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            cursor: pointer;
+            @include transition( .5s);
+        }
+    }
+    video:focus {
+        outline: none;
+    }
+}
+
+
+/************End Gallery Videos**************/
+
+
+/************Begin Gallery photos**************/
+
+.gallery-photo {
+    .row {
+        @include flexbox;
+        div[class*='col'] {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            transition: all .6s;
+            @include transition(all .6s);
+            margin-right: 15px;
+        }
+        .col-:last-child {
+            margin-right: 0;
+        }
+        h2,
+        p {
+            color: $color_white;
+            @include transition(all .6s);
+        }
+        .caption {
+            max-width: 230px;
+            font-size: 12px;
+            margin: 28px 0;
+            @include transition(all .6s);
+            display: none;
+            button {
+                border: 1px solid #fff;
+                background: transparent;
+                outline: none;
+                padding: 8px 18px;
+                color: $color_white;
+                @include bRaduis(30px);
+                margin-top: 20px;
+                cursor: pointer;
+            }
+        }
+        div[class*='col'].active:hover {
+            flex-grow: 4.2;
+        }
+        div[class*='col'].active {
+            flex-grow: 5.2;
+        }
+        div[class*='col']:hover .caption {
+            display: block;
+        }
+        div[class*='col']:hover h2 {
+            text-align: left;
+        }
+    }
+}
+
+
+/************End Gallery photos**************/
+
+
+/************Begin trends fashion **************/
+
+.fashion-trends {
+    .subtitle {
+        margin-bottom: 70px;
+        font-size: 15px;
+    }
+    .btn-buy {
+        width: 150px;
+        padding: 10px 0;
+        outline: none;
+        border: 0;
+        @include bRaduis(2px);
+        position: absolute;
+        background: $color_white;
+        left: 50%;
+        bottom: 0;
+        @include prefixer(transform, translate(-50%, 0), moz ms o webkit);
+        @include transition(.5s);
+        @include opacity(0);
+    }
+    .trending-box:hover .btn-buy {
+        @include prefixer(transform, translate(-50%, 50%), moz ms o webkit);
+        bottom: 50%;
+        @include opacity(1);
+        z-index: 9999;
+    }
+    .overlay {
+        height: 0;
+        width: 320px;
+        background: $color_secondary;
+        position: absolute;
+        top: 0;
+        @include opacity(0);
+        @include transition(.5s);
+    }
+    .trending-box:hover .overlay {
+        @include opacity(.5);
+        height: 100%;
+    }
+}
+
+
+/************End trends fashion **************/
+
+
+/***************** Begin offer*********************/
+
+.offer {
+    background: linear-gradient(45deg, $color_primary, $color_secondary);
+    height: 430px;
+    .subscribe {
+        max-width: 500px;
+        margin: 80px 0 20px 0;
+        padding: 60px;
+        background: #ffffff8c;
+        a {
+            width: 100px;
+            display: block;
+            color: $color_white;
+            background: $color_black;
+            text-decoration: none;
+            padding: 5px;
+            text-align: center;
+        }
+    }
+    img {
+        width: 300px;
+        height: 400px;
+        margin: 100px;
+        margin-top: 150px;
+        cursor: pointer;
+        @include transition(all .5s);
+        &:hover {
+            @include prefixer(filter, grayscale(100%), moz ms o webkit);
+        }
+    }
+}
+
+
+/******************End offer******************/
+
+
+/******************Begin Fashion Blog******************/
+
+.fashion-blog {
+    margin: 250px 0 150px 0;
+    .blog-img {
+        margin-top: 50px;
+        height: 300px;
+        width: 300px;
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+        @include transition(.5s);
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .overlay- {
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+            @include transition(all 0.5s ease);
+            .link {
+                @include flexbox;
+                @include justify-content(center);
+                @include align-items(center);
+                height: 100%;
+            }
+        }
+        &:hover {
+            @include prefixer(transform, scale(1.14), moz ms o webkit);
+        }
+        &:hover .overlay- {
+            background-color: $color_primary;
+            height: 100%;
+            width: 100%;
+            @include opacity(0.7);
+            background-color: $color_secondary !important;
+            visibility: visible;
+        }
+        &:hover a {
+            color: $color_white;
+        }
+    }
+    h5 {
+        margin-top: 20px;
+        font-weight: 600;
+    }
+}
+
+
+/******************End Fashion Blog******************/
+
+
+/******************Begin Fashion Brands******************/
+
+.fashion-brands {
+    margin-bottom: 150px;
+    .brand-logo {
+        width: 200px;
+        height: 200px;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(center);
+        background: #fff;
+        @include bRaduis(50%);
+        margin: 50px auto 30px;
+        @include prefixer(box-shadow, 0 7px 58px 0 rgba(110, 130, 208, 0.18), moz ms o webkit);
+        @include transition(all .5s ease-in);
+        cursor: pointer;
+        svg {
+            width: 100px;
+        }
+        &:hover {
+            @include prefixer(box-shadow, 0 7px 58px 0 rgba(255, 18, 116, 0.42), moz ms o webkit);
+        }
+    }
+}
+
+
+/******************End Fashion Brands******************/
+
+
+/******************Begin Scroll to top******************/
+
+.scroll-top {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 13px;
+    svg {
+        fill: $color_primary;
+        height: 50px;
+    }
+}
+
+
+/******************End Scroll to top******************/

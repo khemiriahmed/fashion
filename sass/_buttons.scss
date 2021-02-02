@@ -1,0 +1,19 @@
+@mixin btn-1 {
+    display: inline-block;
+    background: linear-gradient(45deg, #87adfe, #ff77cd);
+    border-radius: 6px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 3px 8px 22px rgba(94, 98, 68, 0.15);
+    transition: all .5s ease-in-out;
+    &:hover {
+        box-shadow: 3px 8px 22px rgba(236, 75, 169, 0.15);
+        background: linear-gradient(45deg, #ff77cd, #87adfe);
+        color: #fff;
+    }
+}
+
+.btn {
+    @include btn-1;
+}

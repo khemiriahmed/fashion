@@ -1,0 +1,80 @@
+    @media(max-width:991px) {
+        .navbar-default {
+            padding: 0;
+            z-index: 9999;
+            text-align: center;
+            .navbar-nav {
+                li {
+                    a {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+        .hero-fashion {
+            .sidebar {
+                width: 40px;
+            }
+            .pub-container {
+                top: 45%;
+            }
+            .right-col {
+                left: 64px;
+                top: 85%;
+            }
+            .slider {
+                .pub {
+                    h1 {
+                        font-size: 30px;
+                    }
+                    p {
+                        width: 50%;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        .offer {
+            height: auto;
+            text-align: center;
+            img {
+                margin: 0 auto;
+            }
+            .subscribe {
+                margin: 0 auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                padding: 10px;
+                a {
+                    margin: 0 auto;
+                }
+            }
+        }
+        .gallery-video {
+            .feature-img {
+                img {
+                    margin: 0 auto;
+                }
+                p {
+                    @include flexbox;
+                    @include justify-content(center);
+                }
+            }
+        }
+        .fashion-trends {
+            .box {
+                width: 320px;
+                margin: 0 auto;
+                padding: 0;
+                margin-bottom: 20px;
+            }
+        }
+        .fashion-blog {
+            margin: 90px 0 150px 0;
+        }
+        footer {
+            div[class*="col"] {
+                padding-top: 30px;
+            }
+        }
+    }

@@ -1,0 +1,32 @@
+.navbar-default {
+    background: rgba(29, 33, 61, 0.5);
+    border: none;
+    padding: 0 60px;
+    .navbar-nav {
+        li {
+            a {
+                color: $color_white;
+                font-size: 14px;
+                text-decoration: none;
+                font-weight: bold;
+                @include transition(all .9s ease);
+                &:hover,&:focus {
+                    color: $color_secondary;
+                }
+            }
+        }
+        &>li.active{
+            a,a:focus{
+                color: $color_secondary;
+            }
+        }
+    }
+    .navbar-brand {
+        width: 155px;
+        img {
+            width: 30px;
+            position: relative;
+            z-index: 10;
+        }
+    }
+}
